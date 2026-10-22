@@ -132,4 +132,56 @@ document.addEventListener('DOMContentLoaded', () => {
     formStatus.className = `form-status ${type}`;
     formStatus.style.display = 'block';
   }
+
+  // --- 6. Floating Round Corner Avatar Dock ---
+  const cornerDock = document.getElementById('corner-avatar-dock');
+  const heroSection = document.getElementById('home');
+
+  function updateCornerDock() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const heroBottom = heroSection ? heroSection.offsetHeight - 150 : 250;
+    
+    if (cornerDock) {
+      if (scrollY > heroBottom) {
+        cornerDock.classList.add('active');
+      } else {
+        cornerDock.classList.remove('active');
+      }
+    }
+  }
+
+  // --- 7. Cylindric 3D Perspective Rolling Content ---
+  const cylinderCards = document.querySelectorAll('.cylinder-card');
+  let ticking = false;
+
+  function updateCylindricPerspective() {
+    const viewportHeight = window.innerHeight;
+    const viewportCenter = viewportHeight / 2;
+
+    cylinderCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      // Only process cards currently in or near viewport
+      if (rect.bottom >= -50 && rect.top <= viewportHeight + 50) {
+        const cardCenter = rect.top + rect.height / 2;
+        const distanceFromCenter = (cardCenter - viewportCenter) / viewportCenter;
+        // Subtle tilt mimicking content curving across a vertical cylinder
+        const tiltAngle = Math.max(-3.5, Math.min(3.5, distanceFromCenter * 3.5));
+        card.style.setProperty('--tilt-x', `${-tiltAngle.toFixed(2)}deg`);
+      }
+    });
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    updateCornerDock();
+    if (!ticking) {
+      window.requestAnimationFrame(updateCylindricPerspective);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial calculation on page load
+  updateCornerDock();
+  updateCylindricPerspective();
 });
+
