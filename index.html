@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
 
   <!-- Site Navigation -->
   <header class="header">
@@ -32,6 +34,9 @@
       </nav>
 
       <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle rich dark/light theme" title="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
         <a href="#contact" class="btn btn-primary nav-cta">Let's talk</a>
         <button class="menu-btn" id="menu-btn" aria-label="Toggle navigation menu">
           <span></span>
@@ -89,14 +94,14 @@
     </section>
 
     <!-- Quick Preview Section Matching UI Card Layout -->
-    <section class="featured-strip cylinder-item">
+    <section class="featured-strip reveal">
       <div class="container">
         <div class="strip-grid">
-          <div class="strip-card strip-peach cylinder-card">
+          <div class="strip-card strip-peach reveal">
             <img src="images/project-bloodlink.jpg" alt="BloodLink web app mockup" class="strip-img">
             <h3>BloodLink Platform</h3>
           </div>
-          <div class="strip-card strip-mint cylinder-card">
+          <div class="strip-card strip-mint reveal">
             <img src="images/project-loan.jpg" alt="Java Loan System software mockup" class="strip-img">
             <h3>Loan System in Java</h3>
           </div>
@@ -114,7 +119,7 @@
     </section>
 
     <!-- About Me Section -->
-    <section id="about" class="section about cylinder-item">
+    <section id="about" class="section about reveal">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">About Me</span>
@@ -125,7 +130,7 @@
         <div class="about-grid">
           <div class="about-text">
             <div class="about-lead-badge">⚡ Full-Stack Developer • Problem Solver</div>
-            <h3>Bridging User-Centered Design with Resilient Architecture</h3>
+            <h3>A Little Bit About Myself</h3>
             <p>
               I am an aspiring <strong>Full-Stack Developer</strong> currently pursuing my <strong>B.Sc. in Computer Science</strong> at <strong>KG College of Arts and Science</strong>. I don't just write lines of code—I craft digital products that solve genuine everyday problems with speed, elegance, and reliability.
             </p>
@@ -153,7 +158,7 @@
           </div>
 
           <div class="about-cards">
-            <div class="info-card cylinder-card">
+            <div class="info-card reveal">
               <div class="info-icon">🎓</div>
               <div>
                 <h4>Academic Background</h4>
@@ -161,7 +166,7 @@
               </div>
             </div>
 
-            <div class="info-card cylinder-card">
+            <div class="info-card reveal">
               <div class="info-icon">💻</div>
               <div>
                 <h4>Core Technical Focus</h4>
@@ -169,7 +174,7 @@
               </div>
             </div>
 
-            <div class="info-card cylinder-card">
+            <div class="info-card reveal">
               <div class="info-icon">🚀</div>
               <div>
                 <h4>Development Philosophy</h4>
@@ -177,7 +182,7 @@
               </div>
             </div>
 
-            <div class="info-card cylinder-card">
+            <div class="info-card reveal">
               <div class="info-icon">🗣️</div>
               <div>
                 <h4>Bilingual Communication</h4>
@@ -264,7 +269,7 @@
         </div>
 
         <div class="certifications-grid">
-          <div class="cert-card cylinder-card">
+          <div class="cert-card reveal">
             <div class="cert-icon-wrap">
               <span class="cert-icon">☁️</span>
               <span class="cert-badge">NPTEL</span>
@@ -274,7 +279,7 @@
             <p class="cert-desc">Explored distributed architectures, virtualization models, cloud infrastructure, and parallel processing fundamentals.</p>
           </div>
 
-          <div class="cert-card cylinder-card">
+          <div class="cert-card reveal">
             <div class="cert-icon-wrap">
               <span class="cert-icon">⚡</span>
               <span class="cert-badge">Core DSA</span>
@@ -284,7 +289,7 @@
             <p class="cert-desc">Mastered low-level memory allocation, pointers, and essential data structures including linked lists, stacks, and sorting logic.</p>
           </div>
 
-          <div class="cert-card cylinder-card">
+          <div class="cert-card reveal">
             <div class="cert-icon-wrap">
               <span class="cert-icon">🐍</span>
               <span class="cert-badge">Python</span>
@@ -294,7 +299,7 @@
             <p class="cert-desc">Proficiency in Python syntax, object-oriented concepts, modular scripting, and standard libraries for problem solving.</p>
           </div>
 
-          <div class="cert-card cylinder-card">
+          <div class="cert-card reveal">
             <div class="cert-icon-wrap">
               <span class="cert-icon">☕</span>
               <span class="cert-badge">Enterprise</span>
@@ -304,7 +309,7 @@
             <p class="cert-desc">Advanced concepts including Java Collections framework, multithreading, JDBC database integration, and OOP design patterns.</p>
           </div>
 
-          <div class="cert-card cylinder-card">
+          <div class="cert-card reveal">
             <div class="cert-icon-wrap">
               <span class="cert-icon">📊</span>
               <span class="cert-badge">Analytics</span>
@@ -314,7 +319,7 @@
             <p class="cert-desc">Techniques for process discovery, conformance checking, and operational analysis of workflows using event logs.</p>
           </div>
 
-          <div class="cert-card cylinder-card">
+          <div class="cert-card reveal">
             <div class="cert-icon-wrap">
               <span class="cert-icon">🍃</span>
               <span class="cert-badge">NoSQL</span>
@@ -328,7 +333,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects cylinder-item">
+    <section id="projects" class="section projects reveal">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Portfolio</span>
@@ -345,7 +350,7 @@
 
         <div class="projects-grid">
           <!-- Project 1: BloodLink -->
-          <article class="project-card cylinder-card" data-category="web">
+          <article class="project-card reveal" data-category="web">
             <div class="project-img-box card-peach">
               <img src="images/project-bloodlink.jpg" alt="BloodLink Platform Mockup" loading="lazy">
               <span class="project-type-badge">Web Application</span>
@@ -382,7 +387,7 @@
           </article>
 
           <!-- Project 2: Loan System in Java -->
-          <article class="project-card cylinder-card" data-category="software">
+          <article class="project-card reveal" data-category="software">
             <div class="project-img-box card-mint">
               <img src="images/project-loan.jpg" alt="Java Loan System software dashboard mockup" loading="lazy">
               <span class="project-type-badge">Software System</span>
@@ -560,20 +565,6 @@
       <p>© 2026 Gokul M. All rights reserved. Crafted with semantic HTML, CSS, and vanilla JavaScript.</p>
     </div>
   </footer>
-
-  <!-- Floating Round Corner Avatar Dock (Activates upon scrolling) -->
-  <aside class="corner-avatar-dock" id="corner-avatar-dock" aria-label="Quick profile corner shortcut">
-    <a href="#home" class="corner-avatar-link" id="corner-avatar-link" aria-label="Scroll to top - Gokul M">
-      <div class="corner-avatar-ring">
-        <img src="images/profile.jpg" alt="Gokul M" class="corner-avatar-thumb">
-        <span class="corner-pulse-dot" title="Available for work"></span>
-      </div>
-      <div class="corner-avatar-card">
-        <span class="corner-name">Gokul M</span>
-        <span class="corner-role">Full-Stack Dev • Available 🟢</span>
-      </div>
-    </a>
-  </aside>
 
   <script src="script.js"></script>
 </body>
