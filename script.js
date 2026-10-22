@@ -12,25 +12,25 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- 1. Theme Toggle (Rich Dark / Light Mode) ---
+  // --- 1. Theme Toggle (Relevo & Vinco Kraft Board / Dark Roast) ---
   const themeToggle = document.getElementById('theme-toggle');
   const savedTheme = localStorage.getItem('gokul_theme');
 
-  if (savedTheme === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
     if (themeToggle) themeToggle.textContent = '☀️';
   }
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      if (isLight) {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
         document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('gokul_theme', 'dark');
+        localStorage.setItem('gokul_theme', 'craft');
         themeToggle.textContent = '🌙';
       } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('gokul_theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('gokul_theme', 'dark');
         themeToggle.textContent = '☀️';
       }
     });
